@@ -1,0 +1,40 @@
+<style type="text/css">
+    div {
+        height: 100px;
+        width: 100px;
+        background-color: rgb(136, 204, 209);
+    }
+</style>
+<script type="text/javascript" src="jquery-3.5.1.js"></script>
+<script>
+    $(function () {
+
+        //在js加载的时候委托ul监测li的点击事件
+        $("ul").delegate("li", "click", function () {
+            console.log($(this).html());
+        })
+
+        $("#btn").click(function () {
+            //this是点击的li，li没有点击事件，事件冒泡就相当于点击了ul
+            $("ul").append("<li>新增li</li>");
+        })
+
+        $("#div1").hover(function () {
+            console.log("鼠标移入");
+        }, function () {
+            console.log("鼠标移出");
+        })
+
+    })
+</script>
+
+<body>
+    <ul>
+        <li>第一个li</li>
+        <li>第二个li</li>
+        <li>第三个li</li>
+    </ul>
+    <button id="btn">新增li</button>
+    <div id="div1">
+    </div>
+</body>

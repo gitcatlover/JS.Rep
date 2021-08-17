@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            width: 50px;
+            height: 50px;
+            background-color: aqua;
+            margin-top: 20px;
+        }
+
+        .backColor {
+            color: red;
+        }
+    </style>
+    <script type="text/javascript" src="jquery-3.5.1.js"></script>
+    <script>
+        $(function () {
+
+            var div = $("div:empty");//所有没有文本或子元素的DIV
+            var div2 = $("div:parent");//所有有文本或子元素的DIV
+            var contains = $("div:contains('是')");//包含指定文本的div
+            var hasDiv = $("div:has('span')");//包含span标签的div
+            $.each(contains, function (index, value) {
+                $(value).addClass("backColor");
+            })
+            console.log(div);
+            console.log(div2);
+            console.log(contains);
+            console.log(hasDiv);
+            $("#div1").attr("name", "day");
+            console.log($("#ck").prop("checked"));//true false
+            console.log($("#ck").attr("checked"));//checked undefined
+            console.log($("html").scrollTop());//获取网页滚动条移动的位置
+
+            $("#btnHtml").click(function () {
+                $("html").scrollTop(500);
+            });
+            //移除click绑定的test1事件
+            $("btn").off("click", test1);
+
+            //自定义绑定事件
+            $("#div1").on("myClick", function () {
+                alert("myClick");
+            });
+            $("#div1").trigger("myClick");
+        })
+
+        function test1() {
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        <p>今天是个好日子！</p>
+    </div>
+    <div></div>
+    <div><span>昨天是阴雨天</span></div>
+    <div></div>
+    <input id="ck" type="checkbox">
+    <input type="button" value="设置" id="btnHtml">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</body>
+
+</html>
