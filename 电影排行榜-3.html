@@ -40,6 +40,30 @@
             text-align: center;
             margin-right: 10px;
         }
+
+        .content>img {
+            width: 80px;
+            height: 120px;
+            float: left;
+        }
+
+        .content {
+            overflow: hidden;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .content>p {
+            width: 180px;
+            height: 120px;
+            float: right;
+            font-size: 12px;
+            line-height: 20px;
+        }
+
+        .current .content {
+            display: block;
+        }
     </style>
 </head>
 
@@ -47,11 +71,35 @@
     <div class="box">
         <h1>电影排行榜</h1>
         <ul>
-            <li><span>1</span>电影名称</li>
-            <li><span>2</span>电影名称</li>
+            <li><span>1</span>电影名称
+                <div class="content">
+                    <img src="Image/怒火.jpg" alt="怒火">
+                    <p>简介：重案组布网围剿国际毒枭，突然杀出一组蒙面悍匪“黑吃黑”，更冷血屠杀众警察。重案组督察张崇邦（甄子丹 饰）亲睹战友被杀，深入追查发现，悍匪首领竟是昔日战友邱刚敖（谢霆锋
+                        饰）。原来敖也曾是警队明日之星，而将敖推向罪恶深渊的人，却正是邦。宿命令二人再次纠缠，一切恩怨张崇邦如何作出了断……</p>
+                </div>
+            </li>
+            <li><span>2</span>电影名称
+                <div class="content">
+                    <img src="Image/怒火.jpg" alt="怒火">
+                    <p>简介：重案组布网围剿国际毒枭，突然杀出一组蒙面悍匪“黑吃黑”，更冷血屠杀众警察。重案组督察张崇邦（甄子丹 饰）亲睹战友被杀，深入追查发现，悍匪首领竟是昔日战友邱刚敖（谢霆锋
+                        饰）。原来敖也曾是警队明日之星，而将敖推向罪恶深渊的人，却正是邦。宿命令二人再次纠缠，一切恩怨张崇邦如何作出了断……</p>
+                </div>
+            </li>
             <li><span>3</span>电影名称</li>
             <li><span>4</span>电影名称</li>
             <li><span>5</span>电影名称</li>
         </ul>
     </div>
+    <script src="jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("li").mouseenter(function () {
+                $(this).addClass("current");
+            });
+
+            $("li").mouseleave(function () {
+                $(this).removeClass("current");
+            });
+        })
+    </script>
 </body>
