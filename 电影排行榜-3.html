@@ -1,0 +1,57 @@
+<head>
+    <title>电影排行榜</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 300px;
+            height: 450px;
+            margin: 50px auto;
+            border: 1px solid #000;
+        }
+
+        .box>h1 {
+            font-size: 20px;
+            line-height: 35px;
+            color: deeppink;
+            padding-left: 10px;
+            border-bottom: 1px dashed #ccc;
+        }
+
+        ul>li {
+            list-style: none;
+            padding: 5px 10px;
+            border: 1px dashed #ccc
+        }
+
+        ul>li:nth-child(-n+3) span {
+            background: deeppink;
+        }
+
+        ul>li>span {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            background: #ccc;
+            text-align: center;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>电影排行榜</h1>
+        <ul>
+            <li><span>1</span>电影名称</li>
+            <li><span>2</span>电影名称</li>
+            <li><span>3</span>电影名称</li>
+            <li><span>4</span>电影名称</li>
+            <li><span>5</span>电影名称</li>
+        </ul>
+    </div>
+</body>
