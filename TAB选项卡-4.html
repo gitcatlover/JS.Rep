@@ -1,0 +1,91 @@
+<head>
+    <title>TAB选项卡-4</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .box {
+            width: 300px;
+            height: 270px;
+            border: 1px solid #000;
+            margin: 50px auto;
+        }
+
+        .nav>li {
+            list-style: none;
+            width: 75px;
+            height: 35px;
+            background: orange;
+            text-align: center;
+            line-height: 35px;
+            float: left;
+        }
+
+        .nav>.current {
+            background: #ccc;
+        }
+
+        .content>li {
+            list-style: none;
+            display: none;
+        }
+
+        .content>.show {
+            display: block;
+        }
+    </style>
+</head>
+<script src="jquery-3.5.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        // $(".nav>li").hover(
+        //     //选项卡移入事件
+        //     function () {
+        //         $(this).addClass("current");
+        //         //获取当前li索引
+        //         var index = $(this).index();
+        //         //根据索引找到对应图片对象的li
+        //         var li = $(".content>li").eq(index);
+        //         //显示图片
+        //         li.addClass("show");
+        //     },
+        //     //选项卡移出事件
+        //     function () {
+        //         $(this).removeClass("current");
+        //         var index = $(this).index();
+        //         var li = $(".content>li").eq(index);
+        //         li.removeClass("show");
+        //     })
+
+        $(".nav>li").mouseenter(function () {
+            //当前选项卡移入
+            $(this).addClass("current");
+            //其他兄弟选项卡清除current
+            $(this).siblings().removeClass("current");
+            //找到当前li索引
+            var index = $(this).index();
+            var li = $(".content>li").eq(index);
+            li.siblings().removeClass("show");
+            li.addClass("show");
+        });
+    })
+</script>
+
+<body>
+    <div class="box">
+        <ul class="nav">
+            <li>C#本质论</li>
+            <li>Jquery</li>
+            <li>Java理解</li>
+            <li>PHP解惑</li>
+        </ul>
+        <ul class="content">
+            <li><img src="/JS.Rep/Image/前端.jpg"></li>
+            <li><img src="/JS.Rep/Image/Jquery.jpg"></li>
+            <li><img src="/JS.Rep/Image/前端.jpg"></li>
+            <li><img src="/JS.Rep/Image/Jquery.jpg"></li>
+        </ul>
+    </div>
+</body>
