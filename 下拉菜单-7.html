@@ -1,0 +1,65 @@
+<head>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .nav {
+            list-style: none;
+            width: 300px;
+            height: 50px;
+            margin: 100px auto;
+            background: rgb(118, 221, 240);
+        }
+
+        .nav>li {
+            width: 100px;
+            height: 50px;
+            float: left;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .sub {
+            list-style: none;
+            background: rgb(236, 235, 156);
+            display: none;
+        }
+    </style>
+</head>
+<script src="jquery-3.5.1.js"></script>
+<script>
+    $(function () {
+        $(".nav>li").mouseenter(function () {
+            var sub = $(this).children(".sub");
+            sub.stop();
+            sub.slideDown(500);
+        });
+        $(".nav>li").mouseleave(function () {
+            var sub = $(this).children(".sub");
+            sub.stop();
+            sub.slideUp(500);
+        });
+    })
+</script>
+
+<body>
+    <ul class="nav">
+        <li>一级菜单
+            <ul class="sub">
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单
+            <ul class="sub">
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单
+            <ul class="sub">
+                <li>二级菜单</li>
+            </ul>
+        </li>
+    </ul>
+</body>
