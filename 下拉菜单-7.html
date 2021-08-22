@@ -26,6 +26,21 @@
             background: rgb(236, 235, 156);
             display: none;
         }
+
+        .ad {
+            right: 0px;
+            position: fixed;
+            bottom: 0px;
+        }
+
+        .ad>span {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            top: 0px;
+            right: 0px;
+            position: absolute;
+        }
     </style>
 </head>
 <script src="jquery-3.5.1.js"></script>
@@ -41,6 +56,11 @@
             sub.stop();
             sub.slideUp(500);
         });
+
+        $("span").click(function () {
+            $(".ad").remove();
+        });
+        $(".ad").stop().slideDown(1000).fadeOut(1000).fadeIn(1000);
     })
 </script>
 
@@ -62,4 +82,9 @@
             </ul>
         </li>
     </ul>
+
+    <div class="ad">
+        <img src="Image/ad-pic.png">
+        <span></span>
+    </div>
 </body>
