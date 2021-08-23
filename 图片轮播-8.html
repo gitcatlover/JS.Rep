@@ -1,0 +1,71 @@
+<head>
+    <title>图片轮播</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        div {
+            width: 600px;
+            height: 161px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            margin: 100px auto;
+        }
+
+        ul {
+            width: 1800px;
+            height: 161px;
+            list-style: none;
+            background: #000;
+        }
+
+        li {
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li><img src="Image/a.jpg"></li>
+            <li><img src="Image/b.jpg"></li>
+            <li><img src="Image/c.jpg"></li>
+            <li><img src="Image/d.jpg"></li>
+            <li><img src="Image/a.jpg"></li>
+            <li><img src="Image/b.jpg"></li>
+        </ul>
+    </div>
+    <script src="jquery-3.5.1.js"></script>
+    <script>
+        $(function () {
+            var offset = 0; //偏移量
+            var timer;
+
+            autoPlay();
+            $("li").hover(function () {
+                //停止滚动
+                clearInterval(timer);
+                $(this).siblings().fadeTo(100, 0.5);
+                $(this).fadeTo(100, 1);
+            }, function () {
+                autoPlay();
+                //鼠标移开去除所有遮罩层
+                $("li").fadeTo(100, 1);
+            })
+
+            function autoPlay() {
+                timer = setInterval(function () {
+                    offset += -10;
+                    if (offset <= -1200) {
+                        offset = 0;
+                    }
+                    $("ul").css("marginLeft", offset);
+                }, 80);
+            }
+
+        })
+    </script>
+</body>
