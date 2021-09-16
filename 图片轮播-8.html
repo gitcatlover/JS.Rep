@@ -83,7 +83,31 @@
                     $("#sender").prop("disabled", true);
                 }
             })
+            //只触发一次点击事件
+            $("#sender").one("click", function () {
+                console.log($("#common").val());
+                test(null);
+                testObj({
+                    method: "post",
+                    Type: 1
+                })
+            })
 
+            function test(time) {
+                if (time) {
+                    console.log(time);
+                } else {
+                    console.log("kong");
+                }
+            }
+
+            //解析标准和非标准json
+            var str = '{id:1,name:"测试"}';
+            var json = eval("(" + str + ")");
+            var str2 = '{"id":1,"name":"测试2"}';
+            var json2 = eval("(" + str2 + ")");
+            console.log(json);
+            console.log(json2);
         })
     </script>
 </body>
